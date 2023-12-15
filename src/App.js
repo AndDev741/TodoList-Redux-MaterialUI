@@ -1,10 +1,19 @@
+import Header from "./page/Header";
 import Page from "./page/page";
+import { AppBar, CssBaseline } from "@mui/material";
 
 function App() {
   return (
-    <div className="App">
-      <Page/>
-    </div>
+    <AppBar
+            position="absolute"
+            color="default"
+            elevation={0}
+            sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' ,mt: 2}}
+            >
+        <CssBaseline />
+        <Header/>
+        <Page/>
+    </AppBar>
   );
 }
 
