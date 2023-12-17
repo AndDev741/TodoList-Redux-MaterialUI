@@ -20,7 +20,8 @@ export default function appReducer(state = initialState, action) {
 					...state.todos,
 					{
 						id: nextTodoId(state.todos),
-                        text: action.payload,
+                        text: action.payload[0],
+                        importance: action.payload[1],
                         completed: false
 					}
 				]

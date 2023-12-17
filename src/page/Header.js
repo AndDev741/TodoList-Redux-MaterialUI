@@ -1,7 +1,7 @@
-import { Box,Typography } from "@mui/material"
-import { Checklist } from '@mui/icons-material'
-
+import { Box,Typography } from "@mui/material";
+import { Checklist } from '@mui/icons-material';
 export default function Header() {
+  
     return(
         <Box>
             <Typography variant='h3' align='center' sx={{display:'flex', justifyContent:'center', alignItems:'center'}}>

@@ -1,6 +1,6 @@
 const initialState = {
     status: 'All',
-    importance: []
+    importance: ['Important', 'normal', 'irrelevant']
 } 
 
 export default function filtersReducer(state = initialState, action){
