@@ -1,6 +1,5 @@
 const initialState = {
-    status: 'All',
-    importance: ['Important', 'normal', 'irrelevant']
+    filter: 'all',
 } 
 
 export default function filtersReducer(state = initialState, action){
@@ -8,10 +7,7 @@ export default function filtersReducer(state = initialState, action){
         case 'filters/statusFilterChanged': {
             return {
                 ...state,
-                filters: {
-                    ...state.filters,
-                    status: action.payload
-                }
+                filter: action.payload
             }
         }
         default:

@@ -5,7 +5,7 @@ import TodoList from './TodoList'
 export default function Page(){
    
     return(
-        <Grid sm={12} sx={{display: 'flex', flexDirection:'column', alignItems: 'center'}}>
+        <Grid sx={{display: 'flex', flexDirection:'column', alignItems: 'center'}}>
             <Box>
                <Input/>
             </Box> 

@@ -41,11 +41,7 @@ export default function Input(){
             onKeyDown={submitTodoKeyDown}
             label="Your Task" 
             sx={{width:'350px'}}/>
-            <Button variant="outlined" 
-            size='large'
-            sx={{marginLeft: '15px', height: '55px'}} 
-            onClick={submitTodo}>Add</Button>
-            <FormControl sx={{marginLeft: '15px'}}>
+              <FormControl sx={{marginLeft: '15px'}}>
                 <InputLabel id='selection'>Importance</InputLabel>
                 <Select
                 labelId='selection'
@@ -57,12 +53,15 @@ export default function Input(){
                 color='primary'
                 sx={{ width:'145px'}}
                 >
-                    <MenuItem value='importance'>Important</MenuItem>
+                    <MenuItem value='important'>Important</MenuItem>
                     <MenuItem value='normal'>Normal</MenuItem>
                     <MenuItem value='irrelevant'>Irrelevant</MenuItem>
                 </Select>
             </FormControl>
-           
+            <Button variant="outlined" 
+            size='large'
+            sx={{marginLeft: '15px', height: '55px'}} 
+            onClick={submitTodo}>Add</Button>  
         </Box>
     )
 }

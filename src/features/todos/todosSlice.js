@@ -1,6 +1,6 @@
 const initialState = {
     todos: [
-        {id: 0, text: 'Learn React', completed: true},
+        {id: 0, text: 'Learn React', completed: true, importance: 'important'},
         {id: 1, text: 'Learn Redux', completed: false, importance: 'important'},
         {id: 2, text: 'Finish the todo list', completed: false, importance: 'normal'}
     ]
