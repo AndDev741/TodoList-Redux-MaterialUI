@@ -33,15 +33,18 @@ export default function Input(){
         setOption(e.target.value)
     }
     return(
-        <Box sx={{width: 600, display: 'flex', alignItems: 'center'}}>
+        <Box sx={{maxWidth: 600, width: '100%', display: 'flex', alignItems: 'center'}}>
             <TextField 
             value={text}
             autoFocus={true}
             onChange={handleChange}
             onKeyDown={submitTodoKeyDown}
             label="Your Task" 
-            sx={{width:'350px'}}/>
-              <FormControl sx={{marginLeft: '15px'}}>
+            sx={{width: {
+                xs: '130%',
+                sm: '800px'
+              }}}/>
+              <FormControl sx={{width: '80%' ,marginLeft: '15px'}}>
                 <InputLabel id='selection'>Importance</InputLabel>
                 <Select
                 labelId='selection'
@@ -51,7 +54,7 @@ export default function Input(){
                 onChange={handleOption}
                 displayEmpty
                 color='primary'
-                sx={{ width:'145px'}}
+                sx={{ width:'100%'}}
                 >
                     <MenuItem value='important'>Important</MenuItem>
                     <MenuItem value='normal'>Normal</MenuItem>

@@ -2,7 +2,7 @@ const initialState = {
     todos: [
         {id: 0, text: 'Learn React', completed: true, importance: 'important'},
         {id: 1, text: 'Learn Redux', completed: false, importance: 'important'},
-        {id: 2, text: 'Finish the todo list', completed: false, importance: 'normal'}
+        {id: 2, text: 'Learn GO', completed: false, importance: 'irrelevant'}
     ]
 }
 
@@ -32,13 +32,19 @@ export default function appReducer(state = initialState, action) {
                 ...state,
                 todos: state.todos.map(todo => {
                     if(todo.id !== action.payload){
-                        return todo
+                        return todo;
                     }
                     return {
                         ...todo,
                         completed: !todo.completed
                     }
                 })
+            }
+        }
+        case 'todos/deletedTodos': {
+            return{
+                ...state,
+                todos: state.todos.filter(todo => todo.id !== action.payload),
             }
         }
         default:
