@@ -1,4 +1,25 @@
-const initialState = {
+function loadState(){
+    try {
+        const serializedState = localStorage.getItem('reduxState');
+        if(serializedState === null){
+            return undefined;
+        }
+        return JSON.parse(serializedState);
+    }catch(err){
+        return undefined;
+    }
+}
+
+function saveState(state){
+    try{
+        const serializedState = JSON.stringify(state);
+        localStorage.setItem('reduxState', serializedState);
+    }catch(err){
+        console.log(err)
+    }
+}
+
+const initialState = loadState() || {
     todos: [
         {id: 0, text: 'Learn React', completed: true, importance: 'important'},
         {id: 1, text: 'Learn Redux', completed: false, importance: 'important'},
@@ -14,7 +35,7 @@ function nextTodoId(todos){
 export default function appReducer(state = initialState, action) {
     switch(action.type){
         case 'todos/todoAdded': {
-			return {
+			const newState = {
 				...state,
 				todos: [
 					...state.todos,
@@ -23,9 +44,11 @@ export default function appReducer(state = initialState, action) {
                         text: action.payload[0],
                         importance: action.payload[1],
                         completed: false
-					}
-				]
-			}
+					},
+				],
+			};
+            saveState(newState);
+            return newState;
 		}
         case 'todos/todoToggled': {
             return{
